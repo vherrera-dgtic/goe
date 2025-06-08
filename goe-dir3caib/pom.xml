@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <artifactId>goe</artifactId>
+        <groupId>es.caib.goe</groupId>
+        <version>1.0.0</version>
+    </parent>
+
+    <artifactId>goe-dir3caib</artifactId>
+
+    <packaging>war</packaging>
+    <name>goe - DIR3CAIB</name>
+    <description>Mòdul web d'exemple d'integració amb Dir3CAIB</description>
+
+    <dependencies>
+        <!-- Especificacions i llibreries proporcionades per JBoss -->
+        <dependency>
+            <groupId>org.jboss.spec</groupId>
+            <artifactId>jboss-javaee-8.0</artifactId>
+            <type>pom</type>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.microprofile.config</groupId>
+            <artifactId>microprofile-config-api</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <!--
+        Llibreries per emprar l'api de dir3CAIB.
+        Només en cas d'emprar l'api WS SOAP. L'api REST no té cap llibreria específica.
+        -->
+        <!--
+        <dependency>
+            <groupId>es.caib.dir3caib</groupId>
+            <artifactId>dir3caib-ws-api</artifactId>
+            <version>1.0.11</version>
+        </dependency>
+        -->
+    </dependencies>
+
+    <build>
+        <finalName>${project.artifactId}</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
